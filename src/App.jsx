@@ -363,12 +363,21 @@ export default function PhotoSheetWebsite() {
           <aside className="rounded-3xl bg-white/5 p-5 shadow-2xl ring-1 ring-white/10">
             <h2 className="mb-4 text-xl font-semibold">Setup</h2>
 
-            <label className="mb-5 flex cursor-pointer flex-col items-center justify-center rounded-3xl border border-dashed border-white/20 bg-black/30 px-4 py-8 text-center transition hover:border-white/40">
-              <Camera className="mb-3" size={34} />
-              <span className="text-base font-semibold">Take or upload photo</span>
-              <span className="mt-1 text-xs text-neutral-400">Camera works on mobile. Upload works everywhere.</span>
-              <input type="file" accept="image/*" capture="environment" onChange={handleFile} className="hidden" />
-            </label>
+            <div className="mb-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <label className="flex cursor-pointer flex-col items-center justify-center rounded-3xl border border-dashed border-white/20 bg-black/30 px-4 py-6 text-center transition hover:border-white/40">
+                <Camera className="mb-3" size={30} />
+                <span className="text-base font-semibold">Take Photo</span>
+                <span className="mt-1 text-xs text-neutral-400">Opens camera on mobile.</span>
+                <input type="file" accept="image/*" capture="environment" onChange={handleFile} className="hidden" />
+              </label>
+
+              <label className="flex cursor-pointer flex-col items-center justify-center rounded-3xl border border-dashed border-white/20 bg-black/30 px-4 py-6 text-center transition hover:border-white/40">
+                <ImageIcon className="mb-3" size={30} />
+                <span className="text-base font-semibold">Choose File</span>
+                <span className="mt-1 text-xs text-neutral-400">Opens gallery/files.</span>
+                <input type="file" accept="image/*" onChange={handleFile} className="hidden" />
+              </label>
+            </div>
 
             <div className="mb-5">
               <p className="mb-3 text-sm font-semibold text-neutral-200">Choose size</p>
